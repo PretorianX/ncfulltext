@@ -13,7 +13,7 @@ import email
 
 
 mails = "/root/messages"
-import logindata.py
+import logindata
 #List all files in maildir
 mail_dir = listdir(mails)
 #mail_stdin = sys.stdin.readlines()
