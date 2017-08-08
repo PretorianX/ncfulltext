@@ -13,7 +13,16 @@ import email
 
 
 mails = "/root/messages"
-import logindata
+with open('logindata.py') as f:
+    credentials = [x.strip().split(':') for x in f.readlines()]
+
+for username,password,dbip,dbname in credentials:
+    db = postgresql.open('pq://username:password@dbip:5432/dbname')
+
+#Connection to Elastic
+#connections.create_connection(hosts=['162.255.118.53:9200'])
+#connection to PGSQL
+#db = postgresql.open('pq://connector:iddqd@162.255.118.54:5432/spamcollection3')
 #List all files in maildir
 mail_dir = listdir(mails)
 #mail_stdin = sys.stdin.readlines()
